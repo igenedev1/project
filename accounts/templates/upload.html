@@ -1,0 +1,14 @@
+{% load static %}
+<html>
+<head>
+    <title>Login</title>
+   
+</head>
+<body>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="input_excel" />
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

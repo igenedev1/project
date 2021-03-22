@@ -1,0 +1,37 @@
+.mainpanel{
+    height: calc(100% - 80px);
+    padding:0 16px;
+    overflow-x: auto;
+   
+}
+.form-container{
+    width: 550px;
+    background-color:#f4f5f4;
+    margin: 50px auto;
+    padding:50px 50px;
+    z-index: 2;
+}
+#tablewrapper{
+    padding:0 33px;
+    background-color: aliceblue;
+    margin-top: 74px;
+    margin-top: 44px;
+}
+#usertablebody{
+    background-color: azure;
+}
+ tr .edit i{
+     color: rgb(123, 207, 123);
+ }
+ tr .delete i{
+    color: red;
+}
+tr .edit{
+    margin-right: 8px;
+}
+td{
+    min-width: 80px;
+}
+.toast-error {
+    background-color: #BD362F !important;
+}

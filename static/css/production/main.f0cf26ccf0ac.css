@@ -1,0 +1,109 @@
+.shadow-sm{
+    box-shadow: .250rem .125rem .250rem;
+}
+.mainpanel{
+    color: rgba(238, 238, 238, 0.85);
+    background-color:#525252;    
+    width: 100%;
+    height:calc(100% - 80px);
+}
+nav{
+    height: 40px;
+    font-size: 14px;
+    font-weight: 400;
+    background-color:rgb(24,24,24);
+}
+.nav-first .navbar-nav .nav-link{
+    color: rgba(238, 238, 238, 0.85)!important;
+}
+.nav-first{
+    z-index: 1;
+    border-bottom: 1px groove rgb(17, 17, 17);
+}
+.nav-first .navbar-nav .nav-link:hover{
+    color: rgb(6, 150, 215)!important;
+}
+.nav-underline{
+    height:40px
+}
+.tab-content{
+    background-color: #525252;
+    padding: 10px;   
+}
+.nav-underline .nav-link{
+    float: left;
+    color: rgba(238, 238, 238, 0.85)!important;
+    border-bottom: 3px solid transparent;
+}
+
+.nav-underline .nav-link.active{
+    border-bottom: 3px solid rgb(6, 150, 215);
+}
+.nav-underline .nav-link:hover {
+    color: rgb(6, 150, 215)!important;
+}
+.title{
+    background-color:rgb(234,234,234); ;
+    color:rgb(24,24,24);
+    padding: 6px 3px 3px;
+    font-size: 14px;
+    height: 35px;
+}
+.pt_container{
+    padding :4px 10px ;
+}
+.pt_row{
+    widows: 100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.pt_title{
+    font-size: 18px;
+    align-items: center;
+}
+.col-container{
+    border:1px solid rgba(255, 255, 255, 0.1);
+}
+.image-container{
+    height:100px;
+}
+.seq-container{
+    height:250px;
+}
+.shot-container{
+    height:100px;
+}
+.crew-container{
+    height:150px;
+}
+.no-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.inner-row{
+    margin: 0px;
+}
+.add-ele{
+    background-color: rgb(6, 150, 215);
+    min-width: 3.5rem;
+    color: rgba(238, 238, 238, 0.85)
+}
+.ele-act{
+    height:35px;
+}
+.items-container{
+    /* height:100% ;    */
+    height:calc(100% - 57px)
+}
+.contents{
+    /* height:100% ; */
+    height: calc(100% - 55px);
+}
+.navbar-brand{
+    font-size: 18px !important;
+    font-weight: 700;
+}
+

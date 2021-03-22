@@ -1,0 +1,116 @@
+.mainpanel{
+    color: rgba(38, 76, 179, 0.85);
+    /* background-color:#525252;     */
+    width: 100%;
+    overflow-x: auto;
+    height:calc(100% - 40px);
+    font-size: 12px;
+}
+nav{
+    height: 40px;
+    font-size: 14px;
+    font-weight: 400;
+    background-color:rgb(24,24,24);
+}
+.nav-first .navbar-nav .nav-link{
+    color: rgba(238, 238, 238, 0.85)!important;
+}
+.nav-first{
+    z-index: 1;
+    border-bottom: 1px groove rgb(17, 17, 17);
+}
+.nav-first .navbar-nav .nav-link:hover{
+    color: rgb(6, 150, 215)!important;
+}
+.dugroup input{
+    width: 6ch;
+}
+#tablework input[type=text]{
+  max-width: 65px!important;
+}
+.row.workrow{
+    margin:0px;
+    text-align: center;
+    justify-content: space-between;
+}
+td{
+text-align: center;
+}
+.per{
+    width:6ch;
+}
+.sunday{
+    background-color: lightgrey;
+}
+.workday{
+    background-color:lightgreen;
+}
+.weekend{
+    background-color:  #dff904;
+}
+.igene-day{
+    background-color:  #ff9800;
+}
+.leaveday{
+    background-color:lightsalmon !important;
+
+}
+.shotid{
+    width: 65px;
+}
+.list-group-item{
+    padding: 6px 10px;
+}
+.panel input,.panel select,.panel span,.panel button{
+    font-size: 12px!important;
+}
+.tablework input{
+    max-width: 85px;
+}
+.daytime input,.daytime .input-group-text{
+    padding: 6px 3px;
+}
+.daytime input{
+    width: 90px !important;
+}
+select{
+    max-width: 65px;
+}
+.nopad{
+    padding: 0px 0px;
+}
+.font-12{
+font-size: 12px;
+}
+.dailies{
+    width:408px;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+.panel{
+    margin-left: 0px;
+    margin-right: 0px;
+    widows: 1650px!important;
+}
+.no-display{
+    display: none;
+}
+.m-a {
+    margin: 20px!important;
+}
+.lang-sel {
+    top: 0;
+    right: 0;
+    position: relative!important;
+}
+.toast-error {
+    background-color: #BD362F !important;
+}
+.week-nav a{    
+font-size: 16px;
+font-weight: 600;
+margin-right: 4;
+}
+.toast-success {
+    background-color: #51a351;
+}

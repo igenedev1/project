@@ -1,0 +1,168 @@
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+
+    <title>I-Gene</title>
+    <link rel="stylesheet" href="{% static 'css/artist/leadboardprev.css' %}">
+    <link rel='stylesheet' href="{% static 'assets/css/toastr.min.css' %}">
+    <link rel='stylesheet' href="{% static 'assets/css/font_awesome/all.css' %}">
+
+    <!-- Bootstrap core CSS -->
+    <link rel='stylesheet' href="{% static 'assets/css/bootstrap.min.css' %}">
+  
+    <link href="{% static 'assets/css/tabulator_modern.min.css' %}" rel="stylesheet">
+
+    <script type="text/javascript" src="{% static 'assets/js/tabulator.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/xlsx.full.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'utilities/js/requestservices.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/artist/artistprevservices.js' %}"></script>
+
+
+
+
+
+</head>
+
+<body>
+    <nav class="nav-first navbar navbar-expand-sm navbar-fixed navbar-dark">
+        <a class="navbar-brand" href="/projects/board">I Gene</a>
+
+        <div class="container-fluid">
+            <ul class="nav navbar-nav navbar-left">
+                <li class="nav-item active">
+                    <a class="nav-link " href="#">Projects</a>
+                </li>
+
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle d-sm-inline-block" href="#" data-toggle="dropdown" aria-expanded="true">
+                        {{ request.user.username}}
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+                        <a  class="dropdown-item" href="/accounts/pass">Password Change</a>        
+                        <a  class="dropdown-item" href="/accounts/logout">Log Out</a>                    
+                    </div>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+    <main role="main" class="mainpanel">
+        <div class=page-container>
+            <div class="page_title">
+                <div class="pt_container">
+                    <div class=pt_row>
+                        <div class=pt_title>
+                            <span>Projects(<a href="leadboard">Next Month</a>)</span>
+                        </div>
+                        <div class="pt_act"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="contents">
+                <div class="ele-act">
+                    <div > 
+                        <button class="add-ele btn" id="add-excel">Report</button>  
+ 
+                    </div>
+
+                    <div class="btn-act">
+
+                        <select id="filter-dept" placeholder="Filter by Dept" name="dept" class="filter-in">
+                            <option >Choose...</option>
+                            <option value="PAINT">Paint</option>
+                            <option value="MATCH">Match</option>
+                            <option value="ROTO">Roto</option>
+                            <option value="COMP">COMP</option>
+                            <option value="3D">3-d</option>
+                            <option value="FX">Fx</option>
+
+                        </select> 
+
+                        <input id="filter-artist" type="text" class="filter-in" placeholder="By Name" name="username">
+
+                        <button id="clearfilter_btn" class="add-ele btn" tabindex="2">Clear Filter</button>
+
+                    </div>   
+                     
+                </div>
+                <div class="table-content items-container">
+                    <table id="project-table"></table>
+
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <div class="modal fade" id="dailies-modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Dailies</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body user-dlg-body">
+                    <div>
+                        <div class="row">
+                            <div class ="col">
+                                <span>In Time:</span><span id="intime_field"></span>
+                            </div>
+                            <div class ="col">
+                                <span>Out Time:</span><span id="outtime_field"></span>
+                            </div>
+                        </div>
+                        <table class="table-striped table-bordered"id=dailiestable>
+                            <thead>
+                                <th>Work Type</th>
+                                <th>Hours</th>
+                                                                
+                            </thead>
+                            <tbody id="worktable">
+
+                            </tbody>
+
+                        </table>
+                        <div class="d-flex justify-content-end">
+                            <span>Total Hours:</span><span id="total_hours_field"></span>
+                        </div>
+                        <form id="dailiesnotes_form">
+                            <textarea id="dailiesnotes" name="review_notes" rows="4" cols="50">                                
+                            </textarea>
+                            
+                        </form>
+
+                    </div>
+                   
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="closeDailiesBtn"
+                        data-dismiss="modal">cancel</button>
+                    <button type="button" class="btn btn-primary" id="submitDailiesBtn"
+                        data-dismiss="modal">Submit</button>
+                    <button type="button" class="btn btn-primary" id="dailiesactnBtn"
+                    data-dismiss="modal"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="{% static 'assets/js/jquery-3.5.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/toastr.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/popper.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+
+    <meta name="theme-color" content="#563d7c">
+    <script type="text/javascript" src="{% static 'js/artist/leadprevtable.js' %}"></script>
+</body>
+
+</html>
